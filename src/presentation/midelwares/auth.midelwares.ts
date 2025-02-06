@@ -31,7 +31,7 @@ export class AuthMiddleware {
 
       if (!user) return res.status(401).json({ message: "User not found" });
       req.body.sessionUser = user;
-
+      console.log("se ejecuta 1")
       next();
     } catch (error) {
       console.log(error);

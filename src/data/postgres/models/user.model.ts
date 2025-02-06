@@ -58,6 +58,11 @@ export class User extends BaseEntity {
   })
   status: Status;
 
+  @OneToMany(() => Repair, (repair) => repair.user)
+  repairs:Repair[];
+  
+
+
 
   @BeforeInsert()
   async hashPassword() {

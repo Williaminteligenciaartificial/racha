@@ -31,6 +31,7 @@ export class RepairController {
   createRepair = (req: Request, res: Response) => {
     const [error, createRepairDTO] = CreateRepairDTO.create(req.body);
     if (error) return res.status(422).json({ errrors: error });
+    console.log("entra 2")
     this.repairService
       .create(createRepairDTO!)
       .then((data) => res.status(200).json(data))
